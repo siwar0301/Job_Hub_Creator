@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Siwar</title>
+    <style>
+        /* Your styling for the welcome page goes here */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td span {
+            display: block;
+        }
+
+        td span[contenteditable="true"] {
+            border: 1px solid #ddd;
+            padding: 4px;
+        }
+
+        .add-row-button {
+            margin-top: 10px;
+        }
+
+        .section-container {
+            margin-top: 20px;
+        }
+
+        /* Styles for the navigation bar */
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+    <a href="#">Profile</a>
+    <a href="#">Jobs</a>
+    <a href="#">Messages</a>
+</div>
+
+<div class="welcome-container">
+    <h2>Welcome, Siwar!</h2>
+    
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h3>Contact</h3>
+        <p><strong>Name:</strong> <span contenteditable="true" id="editableName">Siwar LASTNAME</span></p>
+        <p><strong>Address:</strong> <span contenteditable="true" id="editableAddress">123 Main St, City</span></p>
+        <p><strong>Email:</strong> <span contenteditable="true" id="editableEmail">siwar@example.com</span></p>
+        <p><strong>Tel:</strong> <span contenteditable="true" id="editableTel">+1 123-456-7890</span></p>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section class="experience-section">
+        <h3>Professional Experience</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date of Begin</th>
+                    <th>Date of End</th>
+                    <th>Company Name</th>
+                    <th>Experience Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span contenteditable="true">MM/YYYY</span></td>
+                    <td><span contenteditable="true">MM/YYYY</span></td>
+                    <td><span contenteditable="true">Company ABC</span></td>
+                    <td><span contenteditable="true">Description of the experience...</span></td>
+                </tr>
+                <!-- Additional rows can be added dynamically -->
+            </tbody>
+        </table>
+        <button class="add-row-button" onclick="addExperienceRow()">Add Experience</button>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section-container">
+        <h3>Education</h3>
+        <p><span contenteditable="true">Degree: </span></p>
+        <p><span contenteditable="true">School: </span></p>
+        <p><span contenteditable="true">Year: </span></p>
+    </section>
+
+    <!-- Languages Section -->
+    <section class="section-container">
+        <h3>Languages</h3>
+        <p><span contenteditable="true">German</span></p>
+        <p><span contenteditable="true">English</span></p>
+        <p><span contenteditable="true">Arabic</span></p>
+        <p><span contenteditable="true">French</span></p>
+    </section>
+
+    <button onclick="saveChanges()">Save Changes</button>
+</div>
+
+<script>
+    function addExperienceRow() {
+        var table = document.querySelector('.experience-section table tbody');
+        var newRow = table.insertRow(table.rows.length);
+        
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        var cell3 = newRow.insertCell(2);
+        var cell4 = newRow.insertCell(3);
+
+        cell1.innerHTML = '<td><span contenteditable="true">MM/YYYY</span></td>';
+        cell2.innerHTML = '<td><span contenteditable="true">MM/YYYY</span></td>';
+        cell3.innerHTML = '<td><span contenteditable="true">New Company</span></td>';
+        cell4.innerHTML = '<td><span contenteditable="true">Description of the new experience...</span></td>';
+    }
+
+    function saveChanges() {
+        // ... (unchanged) ...
+    }
+</script>
+
+</body>
+</html>
