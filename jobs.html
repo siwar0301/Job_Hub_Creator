@@ -75,60 +75,11 @@
         <!-- Add more categories as needed -->
     </select>
 
-    <button onclick="searchJobs()">Search Jobs</button>
+    <button onclick="#">Search Jobs</button>
 
-    <div class="job-list" id="jobList">
-        <!-- Job listings will be displayed here -->
-    </div>
-</div>
 
-<script>
-    function searchJobs() {
-        var jobs = [
-            { title: 'Software Engineer', category: 'IT', location: 'City A', description: 'Lorem ipsum...' },
-            { title: 'Marketing Specialist', category: 'Marketing', location: 'City B', description: 'Lorem ipsum...' },
-            { title: 'Financial Analyst', category: 'Finance', location: 'City C', description: 'Lorem ipsum...' },
-            // Add more dummy job data
-        ];
 
-        // Display the job listings
-        displayJobs(jobs);
-    }
 
-    function displayJobs(jobs) {
-        var jobListContainer = document.getElementById('jobList');
-        jobListContainer.innerHTML = ''; // Clear previous listings
-
-        if (jobs.length === 0) {
-            jobListContainer.innerHTML = '<p>No jobs found.</p>';
-            return;
-        }
-
-        jobs.forEach(function (job) {
-            var jobItem = document.createElement('div');
-            jobItem.classList.add('job-item');
-
-            var jobTitle = document.createElement('h3');
-            jobTitle.textContent = job.title;
-
-            var jobCategory = document.createElement('p');
-            jobCategory.textContent = 'Category: ' + job.category;
-
-            var jobLocation = document.createElement('p');
-            jobLocation.textContent = 'Location: ' + job.location;
-
-            var jobDescription = document.createElement('p');
-            jobDescription.textContent = job.description;
-
-            jobItem.appendChild(jobTitle);
-            jobItem.appendChild(jobCategory);
-            jobItem.appendChild(jobLocation);
-            jobItem.appendChild(jobDescription);
-
-            jobListContainer.appendChild(jobItem);
-        });
-    }
-</script>
 
 </body>
 </html>
